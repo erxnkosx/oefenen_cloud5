@@ -4,3 +4,7 @@ function groet(naam) {
 }
 console.log(groet("wereld"));
 console.log(groet("Cloudsystemen"));
+x = 5;
+y = 10;
+console.log("De som van x en y is: " + (x + y));  
+  

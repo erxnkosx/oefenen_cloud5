@@ -1,0 +1,22 @@
+name: Count Lines
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  count-lines:  
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Count lines of code
+        run: wc -l app.js > /tmp/linesofcode.txt
+
+      - name: Upload lines of code artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lines-of-code
+          path: /tmp/linesofcode.txt

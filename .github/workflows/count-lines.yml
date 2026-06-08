@@ -10,13 +10,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Count lines of code
         run: wc -l app.js > /tmp/linesofcode.txt
 
       - name: Upload lines of code artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lines-of-code
           path: /tmp/linesofcode.txt
